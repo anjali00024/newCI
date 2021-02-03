@@ -9,6 +9,7 @@
   <name>G1 Codes Master</name>
   <url>http://www.talend.org/</url>
   <modules>
+    <module>code/beans</module>
     <module>code/routines</module>
     <module>jobs/process/first_0.1</module>
   </modules>
