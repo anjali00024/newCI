@@ -13,6 +13,7 @@
     <module>code/pigudf</module>
     <module>code/routines</module>
     <module>jobs/process/first_0.1</module>
+    <module>jobs/process/mysql_0.1</module>
     <module>jobs/process/second_0.1</module>
     <module>jobs/process/third_0.1</module>
   </modules>
