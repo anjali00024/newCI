@@ -4,13 +4,12 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.example.g1</groupId>
   <artifactId>code.Master</artifactId>
-  <version>7.2.1</version>
+  <version>7.3.1</version>
   <packaging>pom</packaging>
   <name>G1 Codes Master</name>
   <url>http://www.talend.org/</url>
   <modules>
     <module>code/beans</module>
-    <module>code/pigudf</module>
     <module>code/routines</module>
     <module>jobs/process/first_0.1</module>
     <module>jobs/process/mysql_0.1</module>
@@ -18,11 +17,11 @@
     <module>jobs/process/third_0.1</module>
   </modules>
   <properties>
-    <signer.version>7.2.1</signer.version>
     <talend.project.name>G1</talend.project.name>
+    <signer.version>7.3.1</signer.version>
     <encoding>UTF-8</encoding>
-    <maven.deploy.skip>true</maven.deploy.skip>
     <talend.docker.tag>${project.version}</talend.docker.tag>
+    <maven.deploy.skip>true</maven.deploy.skip>
     <talend.docker.name>${talend.project.name.lowercase}/${talend.job.folder}%a</talend.docker.name>
   </properties>
   <build>
@@ -37,9 +36,29 @@
           <version>3.6.1</version>
           <dependencies>
             <dependency>
+              <groupId>org.apache.maven.shared</groupId>
+              <artifactId>maven-shared-utils</artifactId>
+              <version>3.3.3</version>
+            </dependency>
+            <dependency>
               <groupId>org.eclipse.tycho</groupId>
               <artifactId>tycho-compiler-jdt</artifactId>
               <version>1.4.0</version>
+            </dependency>
+            <dependency>
+              <groupId>org.codehaus.plexus</groupId>
+              <artifactId>plexus-utils</artifactId>
+              <version>3.0.24</version>
+            </dependency>
+            <dependency>
+              <groupId>org.apache.commons</groupId>
+              <artifactId>commons-compress</artifactId>
+              <version>1.19</version>
+            </dependency>
+            <dependency>
+              <groupId>commons-codec</groupId>
+              <artifactId>commons-codec</artifactId>
+              <version>1.15</version>
             </dependency>
           </dependencies>
           <configuration>
@@ -51,10 +70,39 @@
         <plugin>
           <artifactId>maven-resources-plugin</artifactId>
           <version>3.0.2</version>
+          <dependencies>
+            <dependency>
+              <groupId>org.codehaus.plexus</groupId>
+              <artifactId>plexus-utils</artifactId>
+              <version>3.0.24</version>
+            </dependency>
+            <dependency>
+              <groupId>org.apache.maven.shared</groupId>
+              <artifactId>maven-shared-utils</artifactId>
+              <version>3.3.3</version>
+            </dependency>
+          </dependencies>
         </plugin>
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.0.2</version>
+          <dependencies>
+            <dependency>
+              <groupId>org.codehaus.plexus</groupId>
+              <artifactId>plexus-utils</artifactId>
+              <version>3.0.24</version>
+            </dependency>
+            <dependency>
+              <groupId>org.apache.commons</groupId>
+              <artifactId>commons-compress</artifactId>
+              <version>1.19</version>
+            </dependency>
+            <dependency>
+              <groupId>org.apache.maven.shared</groupId>
+              <artifactId>maven-shared-utils</artifactId>
+              <version>3.3.3</version>
+            </dependency>
+          </dependencies>
           <configuration>
             <archive>
               <addMavenDescriptor>false</addMavenDescriptor>
@@ -64,10 +112,61 @@
         <plugin>
           <artifactId>maven-assembly-plugin</artifactId>
           <version>3.0.0</version>
+          <dependencies>
+            <dependency>
+              <groupId>org.apache.maven.shared</groupId>
+              <artifactId>maven-shared-utils</artifactId>
+              <version>3.3.3</version>
+            </dependency>
+            <dependency>
+              <groupId>org.codehaus.plexus</groupId>
+              <artifactId>plexus-utils</artifactId>
+              <version>3.0.24</version>
+            </dependency>
+            <dependency>
+              <groupId>org.apache.commons</groupId>
+              <artifactId>commons-compress</artifactId>
+              <version>1.19</version>
+            </dependency>
+          </dependencies>
         </plugin>
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.20</version>
+          <version>2.12.4</version>
+          <dependencies>
+            <dependency>
+              <groupId>org.codehaus.plexus</groupId>
+              <artifactId>plexus-utils</artifactId>
+              <version>3.0.24</version>
+            </dependency>
+          </dependencies>
+        </plugin>
+        <plugin>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>2.5.1</version>
+          <dependencies>
+            <dependency>
+              <groupId>org.codehaus.plexus</groupId>
+              <artifactId>plexus-utils</artifactId>
+              <version>3.0.24</version>
+            </dependency>
+            <dependency>
+              <groupId>commons-codec</groupId>
+              <artifactId>commons-codec</artifactId>
+              <version>1.15</version>
+            </dependency>
+          </dependencies>
+        </plugin>
+        <plugin>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>2.7</version>
+          <dependencies>
+            <dependency>
+              <groupId>org.codehaus.plexus</groupId>
+              <artifactId>plexus-utils</artifactId>
+              <version>3.0.24</version>
+            </dependency>
+          </dependencies>
         </plugin>
       </plugins>
     </pluginManagement>
@@ -75,7 +174,7 @@
       <plugin>
         <groupId>org.talend.ci</groupId>
         <artifactId>builder-maven-plugin</artifactId>
-        <version>7.2.1</version>
+        <version>7.3.5</version>
         <executions>
           <execution>
             <phase>generate-sources</phase>
@@ -84,6 +183,13 @@
             </goals>
           </execution>
         </executions>
+        <dependencies>
+          <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.15</version>
+          </dependency>
+        </dependencies>
       </plugin>
     </plugins>
   </build>
@@ -102,21 +208,86 @@
                   <groupId>io.fabric8</groupId>
                   <artifactId>docker-maven-plugin</artifactId>
                   <version>0.29.0</version>
+                  <exclusions>
+                    <exclusion>
+                      <artifactId>bcpkix-jdk15on</artifactId>
+                      <groupId>org.bouncycastle</groupId>
+                    </exclusion>
+                    <exclusion>
+                      <artifactId>httpclient</artifactId>
+                      <groupId>org.apache.httpcomponents</groupId>
+                    </exclusion>
+                    <exclusion>
+                      <artifactId>maven-shared-utils</artifactId>
+                      <groupId>org.apache.maven.shared</groupId>
+                    </exclusion>
+                  </exclusions>
+                </dependency>
+                <dependency>
+                  <groupId>commons-codec</groupId>
+                  <artifactId>commons-codec</artifactId>
+                  <version>1.15</version>
+                </dependency>
+                <dependency>
+                  <groupId>commons-logging</groupId>
+                  <artifactId>commons-logging</artifactId>
+                  <version>1.2</version>
+                </dependency>
+                <dependency>
+                  <groupId>org.apache.httpcomponents</groupId>
+                  <artifactId>httpcore</artifactId>
+                  <version>4.4.12</version>
+                </dependency>
+                <dependency>
+                  <groupId>org.apache.httpcomponents</groupId>
+                  <artifactId>httpclient</artifactId>
+                  <version>4.5.13</version>
+                  <exclusions>
+                    <exclusion>
+                      <artifactId>commons-codec</artifactId>
+                      <groupId>commons-codec</groupId>
+                    </exclusion>
+                  </exclusions>
+                </dependency>
+                <dependency>
+                  <groupId>org.apache.maven.shared</groupId>
+                  <artifactId>maven-shared-utils</artifactId>
+                  <version>3.3.3</version>
+                </dependency>
+                <dependency>
+                  <groupId>org.bouncycastle</groupId>
+                  <artifactId>bcpkix-jdk15on</artifactId>
+                  <version>1.68</version>
+                </dependency>
+                <dependency>
+                  <groupId>org.apache.commons</groupId>
+                  <artifactId>commons-compress</artifactId>
+                  <version>1.19</version>
                 </dependency>
                 <dependency>
                   <groupId>com.fasterxml.jackson.core</groupId>
                   <artifactId>jackson-annotations</artifactId>
-                  <version>2.9.9</version>
+                  <version>2.11.4</version>
                 </dependency>
                 <dependency>
                   <groupId>com.fasterxml.jackson.core</groupId>
                   <artifactId>jackson-core</artifactId>
-                  <version>2.9.9</version>
+                  <version>2.11.4</version>
                 </dependency>
                 <dependency>
                   <groupId>com.fasterxml.jackson.core</groupId>
                   <artifactId>jackson-databind</artifactId>
-                  <version>2.9.9</version>
+                  <version>2.11.4</version>
+                </dependency>
+                <dependency>
+                  <groupId>com.fasterxml.jackson.dataformat</groupId>
+                  <artifactId>jackson-dataformat-yaml</artifactId>
+                  <version>2.11.4</version>
+                </dependency>
+                <dependency>
+                  <groupId>com.fasterxml.jackson.module</groupId>
+                  <artifactId>jackson-module-jaxb-annotations</artifactId>
+                  <version>2.11.4</version>
                 </dependency>
               </dependencies>
             </plugin>
@@ -143,6 +314,13 @@
                 </goals>
               </execution>
             </executions>
+            <dependencies>
+              <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcpkix-jdk15on</artifactId>
+                <version>1.68</version>
+              </dependency>
+            </dependencies>
             <configuration>
               <skip>${docker.skip}</skip>
               <autoPull>once</autoPull>
@@ -186,7 +364,7 @@
           <plugin>
             <groupId>org.talend.ci</groupId>
             <artifactId>cloudpublisher-maven-plugin</artifactId>
-            <version>7.2.1</version>
+            <version>7.3.1</version>
             <executions>
               <execution>
                 <phase>deploy</phase>
