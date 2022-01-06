@@ -11,13 +11,17 @@
   <modules>
     <module>code/beans</module>
     <module>code/routines</module>
+    <module>jobs/process/first_0.1</module>
+    <module>jobs/process/mysql_0.1</module>
+    <module>jobs/process/second_0.1</module>
+    <module>jobs/process/third_0.1</module>
   </modules>
   <properties>
-    <signer.version>7.3.2</signer.version>
     <talend.project.name>G1</talend.project.name>
+    <signer.version>7.3.2</signer.version>
     <encoding>UTF-8</encoding>
-    <talend.docker.tag>${project.version}</talend.docker.tag>
     <maven.deploy.skip>true</maven.deploy.skip>
+    <talend.docker.tag>${project.version}</talend.docker.tag>
     <talend.docker.name>${talend.project.name.lowercase}/${talend.job.folder}%a</talend.docker.name>
   </properties>
   <build>
