@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.example.g2</groupId>
   <artifactId>code.Master</artifactId>
-  <version>7.2.1</version>7.2.1
+  <version>7.2.1</version>
   <packaging>pom</packaging>
   <name>G2 Codes Master</name>
   <url>http://www.talend.org/</url>
