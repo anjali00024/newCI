@@ -229,7 +229,7 @@
       <plugin>
         <groupId>org.talend.ci</groupId>
         <artifactId>builder-maven-plugin</artifactId>
-        <version>7.3.7</version>
+        <version>8.0.5</version>
         <executions>
           <execution>
             <phase>generate-sources</phase>
