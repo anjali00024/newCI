@@ -18,11 +18,11 @@
   </modules>
   <properties>
     <talend.project.name>G1</talend.project.name>
-    <signer.version>7.3.2</signer.version>
-    <encoding>UTF-8</encoding>
-    <maven.deploy.skip>true</maven.deploy.skip>
     <talend.docker.tag>${project.version}</talend.docker.tag>
+    <encoding>UTF-8</encoding>
+    <signer.version>7.3.3</signer.version>
     <talend.docker.name>${talend.project.name.lowercase}/${talend.job.folder}%a</talend.docker.name>
+    <maven.deploy.skip>true</maven.deploy.skip>
   </properties>
   <build>
     <pluginManagement>
@@ -210,6 +210,11 @@
               <artifactId>commons-codec</artifactId>
               <version>1.15</version>
             </dependency>
+            <dependency>
+              <groupId>org.apache.maven.shared</groupId>
+              <artifactId>maven-shared-utils</artifactId>
+              <version>3.3.3</version>
+            </dependency>
           </dependencies>
         </plugin>
         <plugin>
@@ -229,7 +234,7 @@
       <plugin>
         <groupId>org.talend.ci</groupId>
         <artifactId>builder-maven-plugin</artifactId>
-        <version>8.0.5</version>
+        <version>7.3.11</version>
         <executions>
           <execution>
             <phase>generate-sources</phase>
@@ -364,27 +369,27 @@
                 <dependency>
                   <groupId>com.fasterxml.jackson.core</groupId>
                   <artifactId>jackson-annotations</artifactId>
-                  <version>2.11.4</version>
+                  <version>2.13.2</version>
                 </dependency>
                 <dependency>
                   <groupId>com.fasterxml.jackson.core</groupId>
                   <artifactId>jackson-core</artifactId>
-                  <version>2.11.4</version>
+                  <version>2.13.2</version>
                 </dependency>
                 <dependency>
                   <groupId>com.fasterxml.jackson.core</groupId>
                   <artifactId>jackson-databind</artifactId>
-                  <version>2.11.4</version>
+                  <version>2.13.2.2</version>
                 </dependency>
                 <dependency>
                   <groupId>com.fasterxml.jackson.dataformat</groupId>
                   <artifactId>jackson-dataformat-yaml</artifactId>
-                  <version>2.11.4</version>
+                  <version>2.13.2</version>
                 </dependency>
                 <dependency>
                   <groupId>com.fasterxml.jackson.module</groupId>
                   <artifactId>jackson-module-jaxb-annotations</artifactId>
-                  <version>2.11.4</version>
+                  <version>2.13.2</version>
                 </dependency>
                 <dependency>
                   <groupId>org.apache.maven</groupId>
@@ -466,7 +471,7 @@
           <plugin>
             <groupId>org.talend.ci</groupId>
             <artifactId>cloudpublisher-maven-plugin</artifactId>
-            <version>7.3.2</version>
+            <version>7.3.3</version>
             <executions>
               <execution>
                 <phase>deploy</phase>
