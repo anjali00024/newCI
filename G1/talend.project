@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties">
-  <TalendProperties:Project xmi:id="_P0XocUpPEeug_cEGPYYEkQ" label="G1" description="" language="java" technicalLabel="G1" author="_P0XockpPEeug_cEGPYYEkQ" productVersion="Talend Data Fabric-7.3.1.20211129_0931-patch" url="{&quot;commitLogPattern&quot;:&quot;{0}&quot;,&quot;location&quot;:&quot;https://github.com/anjali00024/newCI&quot;,&quot;settings&quot;:&quot;010&quot;,&quot;storage&quot;:&quot;git&quot;}" type="DI" itemsRelationVersion="1.3">
+  <TalendProperties:Project xmi:id="_P0XocUpPEeug_cEGPYYEkQ" label="G1" description="" language="java" technicalLabel="G1" author="_P0XockpPEeug_cEGPYYEkQ" productVersion="Talend Data Fabric-7.3.1.20220609_0945-patch" url="{&quot;commitLogPattern&quot;:&quot;{0}&quot;,&quot;location&quot;:&quot;https://github.com/anjali00024/newCI.git&quot;,&quot;settings&quot;:&quot;000&quot;,&quot;storage&quot;:&quot;git&quot;}" type="DI" itemsRelationVersion="1.3">
     <migrationTask xmi:id="_QJXBAEpPEeug_cEGPYYEkQ" id="org.talend.repository.model.migration.CheckProductVersionMigrationTask" breaks="7.1.0" version="7.1.1"/>
   </TalendProperties:Project>
   <TalendProperties:User xmi:id="_P0XockpPEeug_cEGPYYEkQ" login="gituser@company.com" firstName="gituser" lastName="gituser" type="DI" additionnalData="{}"/>
   <TalendProperties:User xmi:id="_RfYeEGYBEeuDYvPo--D14A" login="admin@company.com" firstName="admin" lastName="admin" type="DI" additionnalData="{}"/>
   <TalendProperties:User xmi:id="_8SlasM6vEeutTaQjkUboWQ" login="gituser1@company.com" firstName="gituser" lastName="gituser" type="DI" additionnalData="{}"/>
   <TalendProperties:User xmi:id="_8Slasc6vEeutTaQjkUboWQ" login="user3@company.com" firstName="user3" lastName="user3" type="DI" additionnalData="{}"/>
+  <TalendProperties:User xmi:id="_x_QqIBGKEe2KMoIfMH4lDA" login="user_MDM@company.com" firstName="user_MDM" lastName="user_MDM" type="MDM" additionnalData="{}"/>
+  <TalendProperties:User xmi:id="_x_QqIRGKEe2KMoIfMH4lDA" login="user_MDM@company.com" firstName="user_MDM" lastName="user_MDM" type="MDM" additionnalData="{}"/>
 </xmi:XMI>
