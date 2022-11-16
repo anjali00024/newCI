@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties">
-  <TalendProperties:Project xmi:id="_RGaOMWXTEe2H94R5FpQ_wg" label="test" description="" language="java" technicalLabel="TEST" author="_RGaOMmXTEe2H94R5FpQ_wg" productVersion="Talend Big Data Platform-8.0.1.20221027_1228-patch" url="{&quot;commitLogPattern&quot;:&quot;{0}&quot;,&quot;location&quot;:&quot;https://github.com/anjali00024/newCI&quot;,&quot;settings&quot;:&quot;000&quot;,&quot;storage&quot;:&quot;git&quot;}" type="DQ">
+  <TalendProperties:Project xmi:id="_RGaOMWXTEe2H94R5FpQ_wg" label="test" description="" language="java" technicalLabel="TEST" author="_RGaOMmXTEe2H94R5FpQ_wg" productVersion="Talend Big Data Platform-8.0.1.20221027_1228-patch" url="{&quot;commitLogPattern&quot;:&quot;{0}&quot;,&quot;location&quot;:&quot;https://github.com/anjali00024/newCI&quot;,&quot;settings&quot;:&quot;000&quot;,&quot;storage&quot;:&quot;git&quot;}" type="DQ" itemsRelationVersion="1.3">
     <migrationTask xmi:id="_RKXhIGXTEe2H94R5FpQ_wg" id="org.talend.repository.model.migration.CheckProductVersionMigrationTask" breaks="7.1.0" version="7.1.1"/>
   </TalendProperties:Project>
   <TalendProperties:User xmi:id="_RGaOMmXTEe2H94R5FpQ_wg" login="sec@company.com" firstName="sec" lastName="sec" type="DQ" additionnalData="{}"/>
